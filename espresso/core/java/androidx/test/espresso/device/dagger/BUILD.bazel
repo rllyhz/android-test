@@ -8,6 +8,7 @@ package(default_visibility = ["//espresso/core/java/androidx/test/espresso/devic
 
 kt_android_library(
     name = "dagger",
+    testonly = 1,
     srcs = glob(["*.kt"]),
     plugins = ["//opensource/dagger:dagger_plugin"],  # Add programmatically
     deps = [
@@ -21,5 +22,7 @@ kt_android_library(
         "//grpc:core_android",
         "//grpc:okhttp_android",
         "//opensource/dagger",
+        "//runner/monitor/java/androidx/test:monitor",
+        "//third_party/android/androidx_test/runner/monitor",
     ],
 )
